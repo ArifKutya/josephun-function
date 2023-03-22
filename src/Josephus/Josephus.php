@@ -4,7 +4,6 @@ namespace App\Josephus;
 
 class Josephus
 {
-
     public function solve($n): int
     {
         $index = 0;
