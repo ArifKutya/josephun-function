@@ -4,20 +4,27 @@ namespace App\Josephus;
 
 class Josephus
 {
+    /**
+     * @param $n
+     * @return int
+     */
     public function solve($n): int
     {
-        $index = 0;
-        $people = range(1, $n);
+        return $this->findLastPerson($n);
+    }
 
-        while (count($people) > 1) {
-            $index = ($index + 1) % count($people);
-            array_splice($people, $index, 1);
+    /**
+     * @param $n
+     * @return int
+     */
+    private function findLastPerson($n): int
+    {
+        $binary = decbin($n);
+        $firstPosition = substr($binary, 0, 1);
+        $newLast = $firstPosition;
+        $binary = substr($binary, 1) . $newLast;
 
-            if ($index == count($people)) {
-                $index = 0;
-            }
-        }
-        return $people[0];
+        return bindec($binary);
     }
 
 

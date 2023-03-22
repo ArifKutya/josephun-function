@@ -17,6 +17,9 @@ class JosephusTest extends TestCase
             [2, 1],
             [50, 37],
             [20, 9],
+            [22, 13],
+            [60000000, 52891137],
+            [623423435345345345, 93925366083843715],
         ];
     }
 
@@ -32,7 +35,6 @@ class JosephusTest extends TestCase
         $josephus = new Josephus();
         $result = $josephus->solve($n);
         $this->assertEquals($expected, $result);
-
     }
 
 }
